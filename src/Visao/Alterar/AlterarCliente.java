@@ -80,12 +80,12 @@ public class AlterarCliente extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Endereço:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(20, 410, 120, 20);
+        jLabel2.setBounds(30, 350, 92, 20);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Limpar");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -94,9 +94,9 @@ public class AlterarCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(30, 460, 130, 40);
+        jButton1.setBounds(10, 400, 130, 30);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Alterar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -104,9 +104,9 @@ public class AlterarCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(170, 460, 130, 40);
+        jButton2.setBounds(150, 400, 130, 30);
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Cancelar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,45 +114,45 @@ public class AlterarCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(310, 460, 130, 40);
+        jButton3.setBounds(290, 400, 130, 30);
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Browallia New", 1, 48)); // NOI18N
         jLabel7.setText("Alterar Cliente");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(130, -10, 430, 90);
+        jLabel7.setBounds(120, 0, 220, 60);
 
         jTF_endereco.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_endereco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_endereco.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(jTF_endereco);
-        jTF_endereco.setBounds(150, 410, 250, 30);
+        jTF_endereco.setBounds(130, 350, 250, 20);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setText("Email:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(60, 260, 75, 30);
+        jLabel8.setBounds(60, 220, 56, 30);
 
         jTF_nome.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_nome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_nome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(jTF_nome);
-        jTF_nome.setBounds(150, 210, 250, 30);
+        jTF_nome.setBounds(130, 190, 250, 20);
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setText("Nome:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(60, 210, 80, 20);
+        jLabel9.setBounds(60, 190, 60, 20);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setText("Telefone:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(20, 360, 112, 20);
+        jLabel10.setBounds(30, 310, 86, 20);
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel11.setText("CPF:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(80, 310, 55, 30);
+        jLabel11.setBounds(80, 260, 41, 30);
 
         jTF_cpf.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         try {
@@ -163,7 +163,7 @@ public class AlterarCliente extends javax.swing.JFrame {
         jTF_cpf.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_cpf.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         getContentPane().add(jTF_cpf);
-        jTF_cpf.setBounds(150, 310, 250, 30);
+        jTF_cpf.setBounds(130, 270, 250, 20);
 
         jTF_telefone.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         try {
@@ -174,29 +174,29 @@ public class AlterarCliente extends javax.swing.JFrame {
         jTF_telefone.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_telefone.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         getContentPane().add(jTF_telefone);
-        jTF_telefone.setBounds(150, 360, 250, 30);
+        jTF_telefone.setBounds(130, 310, 250, 20);
 
         jTF_email.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_email.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_email.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(jTF_email);
-        jTF_email.setBounds(150, 260, 250, 30);
+        jTF_email.setBounds(130, 230, 250, 20);
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setText("Insira o código:");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(10, 110, 188, 30);
+        jLabel12.setBounds(10, 90, 141, 30);
 
         jTF_cod.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_cod.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_cod.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(jTF_cod);
-        jTF_cod.setBounds(210, 110, 70, 30);
+        jTF_cod.setBounds(160, 100, 70, 20);
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Cliente Nº:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(160, 160, 131, 30);
+        jLabel13.setBounds(20, 150, 99, 30);
 
         codigo.setEditable(false);
         codigo.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
@@ -208,9 +208,9 @@ public class AlterarCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(codigo);
-        codigo.setBounds(300, 160, 70, 30);
+        codigo.setBounds(130, 150, 70, 20);
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("OK");
         jButton4.setBorder(null);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -219,12 +219,12 @@ public class AlterarCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(290, 110, 80, 30);
+        jButton4.setBounds(240, 100, 60, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/cats-wallpaper1.jpg"))); // NOI18N
         jLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 960, 540);
+        jLabel1.setBounds(0, -40, 960, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

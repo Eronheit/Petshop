@@ -83,31 +83,31 @@ public class AlterarAnimal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Peso:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 380, 70, 20);
+        jLabel2.setBounds(60, 330, 70, 20);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Idade:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 430, 80, 20);
+        jLabel3.setBounds(50, 370, 80, 20);
 
         jTF_peso.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_peso.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_peso.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         getContentPane().add(jTF_peso);
-        jTF_peso.setBounds(140, 380, 230, 30);
+        jTF_peso.setBounds(120, 330, 220, 21);
 
         jTF_idade.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_idade.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_idade.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         getContentPane().add(jTF_idade);
-        jTF_idade.setBounds(140, 430, 230, 30);
+        jTF_idade.setBounds(120, 370, 220, 20);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Limpar");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -116,9 +116,9 @@ public class AlterarAnimal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(30, 480, 130, 40);
+        jButton1.setBounds(20, 400, 120, 30);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Alterar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,9 +126,9 @@ public class AlterarAnimal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(170, 480, 130, 40);
+        jButton2.setBounds(150, 400, 120, 30);
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Cancelar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,80 +136,85 @@ public class AlterarAnimal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(310, 480, 130, 40);
+        jButton3.setBounds(280, 400, 120, 30);
 
         jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Browallia New", 1, 48)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Alterar Animal");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(130, -10, 340, 80);
+        jLabel7.setBounds(220, -10, 220, 80);
 
         jTF_tipo.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_tipo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_tipo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        jTF_tipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTF_tipoActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTF_tipo);
-        jTF_tipo.setBounds(140, 230, 230, 30);
+        jTF_tipo.setBounds(120, 210, 220, 20);
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
         jLabel8.setText("Tipo:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(70, 230, 61, 30);
+        jLabel8.setBounds(60, 200, 45, 30);
 
         jTF_nome.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_nome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_nome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         getContentPane().add(jTF_nome);
-        jTF_nome.setBounds(140, 180, 230, 30);
+        jTF_nome.setBounds(120, 170, 220, 20);
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Nome:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(50, 180, 80, 20);
+        jLabel9.setBounds(50, 170, 60, 20);
 
         jTF_tamanho.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_tamanho.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_tamanho.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         getContentPane().add(jTF_tamanho);
-        jTF_tamanho.setBounds(140, 330, 230, 30);
+        jTF_tamanho.setBounds(120, 290, 220, 20);
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(255, 255, 255));
         jLabel10.setText("Tamanho:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(10, 330, 120, 20);
+        jLabel10.setBounds(20, 290, 92, 20);
 
         jTF_raca.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_raca.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_raca.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         getContentPane().add(jTF_raca);
-        jTF_raca.setBounds(140, 280, 230, 30);
+        jTF_raca.setBounds(120, 250, 220, 20);
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Raça:");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(60, 280, 67, 30);
+        jLabel11.setBounds(60, 240, 52, 30);
 
         jTF_cod.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_cod.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_cod.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(jTF_cod);
-        jTF_cod.setBounds(210, 80, 70, 30);
+        jTF_cod.setBounds(160, 70, 70, 23);
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
         jLabel12.setText("Insira o código:");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(10, 80, 188, 30);
+        jLabel12.setBounds(10, 70, 141, 30);
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setText("Animal Nº:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(160, 130, 130, 30);
+        jLabel13.setBounds(10, 120, 98, 30);
 
         codigo.setEditable(false);
         codigo.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
@@ -221,9 +226,9 @@ public class AlterarAnimal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(codigo);
-        codigo.setBounds(300, 130, 70, 30);
+        codigo.setBounds(120, 130, 70, 20);
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("OK");
         jButton4.setBorder(null);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -232,11 +237,11 @@ public class AlterarAnimal extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(290, 80, 80, 30);
+        jButton4.setBounds(240, 70, 60, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Dog-front-view-pet_1920x1080.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 960, 540);
+        jLabel1.setBounds(0, -40, 960, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -336,6 +341,10 @@ public class AlterarAnimal extends javax.swing.JFrame {
         InserirDados(cod);
         jTF_cod.setText("");
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jTF_tipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_tipoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTF_tipoActionPerformed
 
     /**
      * @param args the command line arguments

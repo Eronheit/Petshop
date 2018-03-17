@@ -5,10 +5,13 @@
  */
 package Visao.Alterar;
 
+
 import Visao.Cadastrar.*;
+import DAO.AnimalDAO;
 import DAO.Conexao;
-import DAO.FuncionarioDAO;
-import Modelo.Funcionario;
+import DAO.ServicoDAO;
+import Modelo.Animal;
+import Modelo.Servico;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
@@ -18,37 +21,49 @@ import javax.swing.JOptionPane;
  *
  * @author Euxz
  */
-public class AlterarFuncionario extends javax.swing.JFrame {
+public class AlterarServico extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastrarFuncionario
      */
-    public AlterarFuncionario() {
+    public AlterarServico() {
         initComponents();
         setSize(975, 575);
+        AtualizaComboAnimal();
     }
     
+    private void AtualizaComboAnimal(){
+            Connection con = Conexao.AbrirConexao();
+            AnimalDAO sql = new AnimalDAO(con);
+            List<Animal> lista = new ArrayList<>();
+            lista = sql.ListarComboAnimal();
+            jCB_indicacao.addItem("");
+            
+            for(Animal b : lista){
+                jCB_indicacao.addItem(b.getNome());
+            }
+            Conexao.FecharConexao(con);
+    }
+
     private void InserirDados(int cod){
         
         Connection con = Conexao.AbrirConexao();
-        FuncionarioDAO sql = new FuncionarioDAO(con);
-        List<Funcionario> lista = new ArrayList<>();
-        lista = sql.CapturarFuncionario(cod);
+        ServicoDAO sql = new ServicoDAO(con);
+        List<Servico> lista = new ArrayList<>();
+        lista = sql.CapturarServico(cod);
         
-        for(Funcionario f : lista){
-            codigo.setText(""+ f.getCod());
-            jTF_nome.setText(f.getNome());
-            jTF_usuario.setText(f.getUsuario());
-            jTF_senha.setText(f.getSenha());
-            jTF_endereco.setText(f.getEndereco());
-            jTF_cpf.setText(f.getCpf());
-            jTF_rg.setText(f.getRg());
-            jTF_telefone.setText(f.getTelefone());
+        for(Servico s : lista){
+            codigo.setText(""+ s.getCod());
+            jTF_nome.setText(s.getNome());
+            jTF_indicacao.setText(""+ s.getIndicacao());
+            jTF_preco.setText(""+ s.getPreco());
+            jTF_disponibilidade.setText(s.getDisponibilidade());
+            zero.setText(""+ s.getDesconto());
         }
         Conexao.FecharConexao(con);
         
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -58,98 +73,29 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTF_usuario = new javax.swing.JTextField();
-        jTF_endereco = new javax.swing.JTextField();
-        jTF_cpf = new javax.swing.JFormattedTextField();
-        jTF_rg = new javax.swing.JFormattedTextField();
-        jTF_telefone = new javax.swing.JFormattedTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jTF_preco = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jTF_disponibilidade = new javax.swing.JTextField();
         jTF_nome = new javax.swing.JTextField();
+        jCB_indicacao = new javax.swing.JComboBox<>();
+        jTF_indicacao = new javax.swing.JTextField();
         jTF_cod = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         codigo = new javax.swing.JTextField();
         jButton4 = new javax.swing.JButton();
-        jTF_senha = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        zero = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel2.setText("Usuário:");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(410, 190, 76, 20);
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Endereço:");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(390, 270, 92, 30);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel4.setText("CPF:");
-        getContentPane().add(jLabel4);
-        jLabel4.setBounds(440, 310, 41, 20);
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel5.setText("RG:");
-        getContentPane().add(jLabel5);
-        jLabel5.setBounds(450, 350, 33, 20);
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel6.setText("Telefone:");
-        getContentPane().add(jLabel6);
-        jLabel6.setBounds(400, 390, 86, 20);
-
-        jTF_usuario.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        jTF_usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTF_usuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        getContentPane().add(jTF_usuario);
-        jTF_usuario.setBounds(500, 190, 300, 20);
-
-        jTF_endereco.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        jTF_endereco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTF_endereco.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        getContentPane().add(jTF_endereco);
-        jTF_endereco.setBounds(500, 270, 300, 20);
-
-        jTF_cpf.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        try {
-            jTF_cpf.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jTF_cpf.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTF_cpf.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        getContentPane().add(jTF_cpf);
-        jTF_cpf.setBounds(500, 310, 300, 20);
-
-        jTF_rg.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        jTF_rg.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTF_rg.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        getContentPane().add(jTF_rg);
-        jTF_rg.setBounds(500, 350, 300, 20);
-
-        jTF_telefone.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        try {
-            jTF_telefone.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        jTF_telefone.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTF_telefone.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        getContentPane().add(jTF_telefone);
-        jTF_telefone.setBounds(500, 390, 300, 20);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Limpar");
@@ -160,7 +106,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(390, 420, 130, 30);
+        jButton1.setBounds(400, 380, 130, 30);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Alterar");
@@ -170,7 +116,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(530, 420, 130, 30);
+        jButton2.setBounds(540, 380, 130, 30);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Cancelar");
@@ -180,39 +126,79 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(670, 420, 130, 30);
+        jButton3.setBounds(680, 380, 130, 30);
 
+        jLabel7.setBackground(new java.awt.Color(255, 255, 255));
         jLabel7.setFont(new java.awt.Font("Browallia New", 1, 48)); // NOI18N
-        jLabel7.setText("Alterar Funcionário");
+        jLabel7.setText("Alterar Serviço");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(210, 0, 290, 60);
+        jLabel7.setBounds(130, -10, 430, 90);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel8.setText("Nome:");
+        jLabel8.setText("Indicação:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(420, 150, 60, 20);
+        jLabel8.setBounds(420, 250, 100, 30);
+
+        jTF_preco.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jTF_preco.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTF_preco.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(jTF_preco);
+        jTF_preco.setBounds(530, 300, 260, 23);
+
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel9.setText("Nome:");
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(450, 220, 60, 20);
+
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel10.setText("Disponibilidade:");
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(380, 340, 144, 20);
+
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel11.setText("Preço:");
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(460, 290, 59, 30);
+
+        jTF_disponibilidade.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jTF_disponibilidade.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTF_disponibilidade.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        getContentPane().add(jTF_disponibilidade);
+        jTF_disponibilidade.setBounds(530, 340, 260, 23);
 
         jTF_nome.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_nome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTF_nome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
+        jTF_nome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(jTF_nome);
-        jTF_nome.setBounds(500, 150, 300, 20);
+        jTF_nome.setBounds(530, 220, 260, 23);
+
+        jCB_indicacao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_indicacaoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCB_indicacao);
+        jCB_indicacao.setBounds(580, 260, 210, 20);
+
+        jTF_indicacao.setEditable(false);
+        getContentPane().add(jTF_indicacao);
+        jTF_indicacao.setBounds(530, 260, 40, 20);
 
         jTF_cod.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
         jTF_cod.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_cod.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(jTF_cod);
-        jTF_cod.setBounds(590, 80, 70, 20);
+        jTF_cod.setBounds(530, 140, 70, 23);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setText("Insira o código:");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(440, 70, 141, 30);
+        jLabel12.setBounds(380, 130, 141, 30);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel13.setText("Funcionário: Nº:");
+        jLabel13.setText("Cliente Nº:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(450, 110, 150, 30);
+        jLabel13.setBounds(420, 180, 99, 20);
 
         codigo.setEditable(false);
         codigo.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
@@ -224,7 +210,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(codigo);
-        codigo.setBounds(610, 120, 70, 20);
+        codigo.setBounds(530, 180, 70, 23);
 
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("OK");
@@ -235,22 +221,16 @@ public class AlterarFuncionario extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(670, 80, 60, 20);
-
-        jTF_senha.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
-        jTF_senha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jTF_senha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
-        getContentPane().add(jTF_senha);
-        jTF_senha.setBounds(500, 230, 300, 20);
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel9.setText("Senha:");
-        getContentPane().add(jLabel9);
-        jLabel9.setBounds(420, 230, 64, 20);
+        jButton4.setBounds(610, 140, 80, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cute-puppy-dog-pet-face-hand_1920x1080.jpg"))); // NOI18N
+        jLabel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, -40, 960, 540);
+        jLabel1.setBounds(0, 0, 818, 461);
+
+        zero.setText("0");
+        getContentPane().add(zero);
+        zero.setBounds(780, 70, 6, 14);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -258,14 +238,12 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String codigooo = codigo.getText();
         String nome = jTF_nome.getText();
-        String usuario = jTF_usuario.getText();
-        String senha = jTF_senha.getText();
-        String endereco = jTF_endereco.getText();
-        String cpf = jTF_cpf.getText();
-        String rg = jTF_rg.getText();
-        String telefone = jTF_telefone.getText();
+        String indicacao = jTF_indicacao.getText();
+        String preco = jTF_preco.getText();
+        String desconto = zero.getText();
+        String disponibilidade = jTF_disponibilidade.getText();
         
-        if (nome.equalsIgnoreCase("") || usuario.equalsIgnoreCase("") || senha.equalsIgnoreCase("") || endereco.equalsIgnoreCase("") || cpf.equalsIgnoreCase("") || rg.equalsIgnoreCase("") || telefone.equalsIgnoreCase("")) {
+        if (nome.equalsIgnoreCase("") || indicacao.equalsIgnoreCase("") || preco.equalsIgnoreCase("") || disponibilidade.equalsIgnoreCase("")) {
             
             JOptionPane.showMessageDialog(null,"Nenhum campo pode ficar vazio!!","Erro", JOptionPane.WARNING_MESSAGE);
             
@@ -273,35 +251,37 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         }
         else{
             Connection con = Conexao.AbrirConexao(); 
-            FuncionarioDAO sql = new FuncionarioDAO(con);
+            ServicoDAO sql = new ServicoDAO(con);
+            
+            int indicacaoo = Integer.parseInt(indicacao);
+            
+            Double precoo = Double.parseDouble(preco);
+
+            Double descontoo = Double.parseDouble(desconto);
             
             int cod = Integer.parseInt(codigooo);
-            Funcionario a = new Funcionario();
             
-            a.setCod(cod);
-            a.setNome(nome);
-            a.setUsuario(usuario);
-            a.setSenha(senha);
-            a.setEndereco(endereco);
-            a.setCpf(cpf);
-            a.setRg(rg);
-            a.setTelefone(telefone);
+            Servico s = new Servico();
             
-            sql.Alterar_Funcionario(a);
+            s.setCod(cod);
+            s.setNome(nome);
+            s.setIndicacao(indicacaoo);
+            s.setPreco(precoo);
+            s.setDisponibilidade(disponibilidade);
+            s.setDesconto(descontoo);
+
+            
+            sql.Alterar_Servico(s);
             
             Conexao.FecharConexao(con);
             
-            jTF_nome.setText("");
-            jTF_usuario.setText("");
-            jTF_senha.setText("");
-            jTF_endereco.setText("");
-            jTF_cpf.setText("");
-            jTF_rg.setText("");
-            jTF_telefone.setText("");
             codigo.setText("");
+            jTF_nome.setText("");
+            jTF_indicacao.setText("");
+            jTF_preco.setText("");
+            jTF_disponibilidade.setText("");
             
-            
-            JOptionPane.showMessageDialog(null,"Funcionário alterado com sucesso", "sucesso", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(null,"Serviço inserido com sucesso", "sucesso", JOptionPane.INFORMATION_MESSAGE);
         }
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -311,14 +291,25 @@ public class AlterarFuncionario extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTF_nome.setText("");
-        jTF_usuario.setText("");
-        jTF_senha.setText("");
-        jTF_endereco.setText("");
-        jTF_cpf.setText("");
-        jTF_rg.setText("");
-        jTF_telefone.setText("");
-        codigo.setText("");
+        jTF_indicacao.setText("");
+        jTF_preco.setText("");
+        jTF_disponibilidade.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jCB_indicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_indicacaoActionPerformed
+        Connection con = Conexao.AbrirConexao();
+        AnimalDAO sql = new AnimalDAO(con);
+        List<Animal> lista = new ArrayList<>();
+        String indicacao = jCB_indicacao.getSelectedItem().toString();
+        
+        lista = sql.ConsultarCodigoAnimal(indicacao);
+        
+        for(Animal a : lista){
+            int b = a.getCod();
+            jTF_indicacao.setText("" + b);
+        }
+        Conexao.FecharConexao(con);
+    }//GEN-LAST:event_jCB_indicacaoActionPerformed
 
     private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed
         // TODO add your handling code here:
@@ -327,10 +318,10 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String codigoo = jTF_cod.getText();
         Connection con = Conexao.AbrirConexao();
-        FuncionarioDAO sql = new FuncionarioDAO(con);
+        ServicoDAO sql = new ServicoDAO(con);
         int cod = Integer.parseInt(codigoo);
 
-        if (sql.Testar_Funcionario(cod) == false) {
+        if (sql.Testar_Servico(cod) == false) {
             JOptionPane.showMessageDialog(null,"Codigo não encontrado no banco",
                 "Locadora", JOptionPane.ERROR_MESSAGE);
             Conexao.FecharConexao(con);
@@ -342,12 +333,9 @@ public class AlterarFuncionario extends javax.swing.JFrame {
 
         codigo.setText("");
         jTF_nome.setText("");
-        jTF_usuario.setText("");
-        jTF_senha.setText("");
-        jTF_endereco.setText("");
-        jTF_cpf.setText("");
-        jTF_rg.setText("");
-        jTF_telefone.setText("");
+        jTF_indicacao.setText("");
+        jTF_preco.setText("");
+        jTF_disponibilidade.setText("");
 
         InserirDados(cod);
         jTF_cod.setText("");
@@ -370,14 +358,26 @@ public class AlterarFuncionario extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AlterarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarServico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AlterarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarServico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AlterarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarServico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AlterarFuncionario.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AlterarServico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -386,7 +386,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AlterarFuncionario().setVisible(true);
+                new AlterarServico().setVisible(true);
             }
         });
     }
@@ -397,24 +397,20 @@ public class AlterarFuncionario extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JComboBox<String> jCB_indicacao;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField jTF_cod;
-    private javax.swing.JFormattedTextField jTF_cpf;
-    private javax.swing.JTextField jTF_endereco;
+    private javax.swing.JTextField jTF_disponibilidade;
+    private javax.swing.JTextField jTF_indicacao;
     private javax.swing.JTextField jTF_nome;
-    private javax.swing.JFormattedTextField jTF_rg;
-    private javax.swing.JTextField jTF_senha;
-    private javax.swing.JFormattedTextField jTF_telefone;
-    private javax.swing.JTextField jTF_usuario;
+    private javax.swing.JTextField jTF_preco;
+    private javax.swing.JLabel zero;
     // End of variables declaration//GEN-END:variables
 }

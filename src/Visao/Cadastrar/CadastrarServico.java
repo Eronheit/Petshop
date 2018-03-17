@@ -67,6 +67,7 @@ public class CadastrarServico extends javax.swing.JFrame {
         jCB_indicacao = new javax.swing.JComboBox<>();
         jTF_indicacao = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        zero = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -163,6 +164,10 @@ public class CadastrarServico extends javax.swing.JFrame {
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 960, 540);
 
+        zero.setText("0");
+        getContentPane().add(zero);
+        zero.setBounds(780, 70, 6, 14);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -170,6 +175,7 @@ public class CadastrarServico extends javax.swing.JFrame {
         String nome = jTF_nome.getText();
         String indicacao = jTF_indicacao.getText();
         String preco = jTF_preco.getText();
+        String desconto = zero.getText();
         String disponibilidade = jTF_disponibilidade.getText();
         
         if (nome.equalsIgnoreCase("") || indicacao.equalsIgnoreCase("") || preco.equalsIgnoreCase("") || disponibilidade.equalsIgnoreCase("")) {
@@ -182,12 +188,20 @@ public class CadastrarServico extends javax.swing.JFrame {
             Connection con = Conexao.AbrirConexao(); 
             ServicoDAO sql = new ServicoDAO(con);
             
+            int indicacaoo = Integer.parseInt(indicacao);
+            
+            Double precoo = Double.parseDouble(preco);
+
+            Double descontoo = Double.parseDouble(desconto);
+            
             Servico s = new Servico();
             
             s.setNome(nome);
-            s.setIndicacao(indicacao);
-            s.setPreco(preco);
+            s.setIndicacao(indicacaoo);
+            s.setPreco(precoo);
             s.setDisponibilidade(disponibilidade);
+            s.setDesconto(descontoo);
+
             
             sql.Inserir_Servico(s);
             
@@ -223,7 +237,7 @@ public class CadastrarServico extends javax.swing.JFrame {
         
         for(Animal a : lista){
             int b = a.getCod();
-            jTF_indicacao.setText(""+b);
+            jTF_indicacao.setText("" + b);
         }
         Conexao.FecharConexao(con);
     }//GEN-LAST:event_jCB_indicacaoActionPerformed
@@ -285,5 +299,6 @@ public class CadastrarServico extends javax.swing.JFrame {
     private javax.swing.JTextField jTF_indicacao;
     private javax.swing.JTextField jTF_nome;
     private javax.swing.JTextField jTF_preco;
+    private javax.swing.JLabel zero;
     // End of variables declaration//GEN-END:variables
 }

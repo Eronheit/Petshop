@@ -12,9 +12,10 @@ package Modelo;
 public class Servico {
     private int cod;
     private String nome;
-    private String indicacao;
-    private String preco;
+    private int indicacao;
+    private Double preco;
     private String disponibilidade;
+    private Double desconto;
 
     public int getCod() {
         return cod;
@@ -32,19 +33,19 @@ public class Servico {
         this.nome = nome;
     }
 
-    public String getIndicacao() {
+    public int getIndicacao() {
         return indicacao;
     }
 
-    public void setIndicacao(String indicacao) {
+    public void setIndicacao(int indicacao) {
         this.indicacao = indicacao;
     }
 
-    public String getPreco() {
+    public Double getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(Double preco) {
         this.preco = preco;
     }
 
@@ -56,5 +57,14 @@ public class Servico {
         this.disponibilidade = disponibilidade;
     }
 
-  
+    public Double getDesconto() {
+        return desconto;
+    }
+
+    public void setDesconto(Double desconto) {
+        this.desconto = desconto;
+    }
+    
+    
+    
 }

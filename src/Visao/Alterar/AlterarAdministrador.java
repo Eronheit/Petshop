@@ -79,28 +79,28 @@ public class AlterarAdministrador extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Nome:");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(530, 230, 80, 20);
+        jLabel2.setBounds(440, 240, 60, 20);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Senha:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(530, 350, 82, 20);
+        jLabel3.setBounds(430, 320, 64, 20);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Senha Extra:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(460, 420, 153, 20);
+        jLabel4.setBounds(380, 360, 117, 20);
 
-        jTF_nome.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jTF_nome.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTF_nome.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_nome.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         getContentPane().add(jTF_nome);
-        jTF_nome.setBounds(630, 230, 300, 30);
+        jTF_nome.setBounds(510, 240, 290, 20);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Limpar");
         jButton1.setBorder(null);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -109,9 +109,9 @@ public class AlterarAdministrador extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(540, 470, 130, 40);
+        jButton1.setBounds(410, 400, 120, 30);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Alterar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,9 +119,9 @@ public class AlterarAdministrador extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(680, 470, 130, 40);
+        jButton2.setBounds(550, 400, 120, 30);
 
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton3.setText("Cancelar");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,26 +129,26 @@ public class AlterarAdministrador extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(820, 470, 130, 40);
+        jButton3.setBounds(680, 400, 120, 30);
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 48)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Browallia New", 1, 48)); // NOI18N
         jLabel7.setText("Alterar Administrador");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(240, 0, 600, 90);
+        jLabel7.setBounds(240, 0, 330, 60);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Usuário:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(510, 290, 100, 20);
+        jLabel5.setBounds(420, 280, 76, 20);
 
-        jTF_usuario.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jTF_usuario.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTF_usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_usuario.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         getContentPane().add(jTF_usuario);
-        jTF_usuario.setBounds(630, 290, 300, 30);
+        jTF_usuario.setBounds(510, 280, 290, 20);
 
         codigo.setEditable(false);
-        codigo.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        codigo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         codigo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         codigo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         codigo.addActionListener(new java.awt.event.ActionListener() {
@@ -157,25 +157,25 @@ public class AlterarAdministrador extends javax.swing.JFrame {
             }
         });
         getContentPane().add(codigo);
-        codigo.setBounds(820, 180, 70, 30);
+        codigo.setBounds(510, 200, 70, 20);
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel13.setText("Administrador Nº:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(590, 180, 217, 30);
+        jLabel13.setBounds(340, 190, 163, 30);
 
-        jTF_cod.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jTF_cod.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTF_cod.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_cod.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         getContentPane().add(jTF_cod);
-        jTF_cod.setBounds(730, 130, 70, 30);
+        jTF_cod.setBounds(510, 160, 70, 20);
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel12.setText("Insira o código:");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(530, 130, 188, 30);
+        jLabel12.setBounds(360, 150, 141, 30);
 
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton4.setText("OK");
         jButton4.setBorder(null);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -184,23 +184,23 @@ public class AlterarAdministrador extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton4);
-        jButton4.setBounds(810, 130, 80, 30);
+        jButton4.setBounds(590, 160, 60, 20);
 
-        jTF_senha.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jTF_senha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTF_senha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_senha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         getContentPane().add(jTF_senha);
-        jTF_senha.setBounds(630, 350, 300, 30);
+        jTF_senha.setBounds(510, 320, 290, 20);
 
-        jTF_senhaextra.setFont(new java.awt.Font("Tahoma", 0, 17)); // NOI18N
+        jTF_senhaextra.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jTF_senhaextra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_senhaextra.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 0, true));
         getContentPane().add(jTF_senhaextra);
-        jTF_senhaextra.setBounds(630, 410, 300, 30);
+        jTF_senhaextra.setBounds(510, 360, 290, 20);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/Cute-puppy-dog-pet-face-hand_1920x1080.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 10, 960, 540);
+        jLabel1.setBounds(0, -40, 960, 540);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
