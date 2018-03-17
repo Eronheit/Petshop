@@ -125,4 +125,81 @@ public class ClienteDAO extends ExecuteSQL{
             return e.getMessage();
         }
     }
+    
+    //Consultar codigo do Cliente
+    public List<Cliente> ConsultarCodigoCliente(String nome){
+        String sql = "SELECT idcliente FROM cliente WHERE nome = '"+nome+"'";
+        List<Cliente> lista = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while(rs.next()){
+                    Cliente a = new Cliente();
+                    a.setCod(rs.getInt(1));
+                    lista.add(a);
+                    
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e) {
+            return null;
+        }
+        
+    }
+    
+    //Excluir Cliente
+    public String Excluir_Cliente(Cliente a){
+        String sql = "DELETE FROM cliente WHERE idcliente = ? and nome = ?";
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ps.setInt(1, a.getCod());
+            ps.setString(2, a.getNome());
+            
+            if (ps.executeUpdate() > 0) {
+                return "Excluido com sucesso";
+            }
+            else{
+                return "Erro ao excluir";
+            }
+        } 
+        catch (SQLException e) {
+            return e.getMessage();
+        }
+    }
+    
+    //Listar combo dos Clientes
+    public List<Cliente> ListarComboCliente(){
+        String sql = "SELECT nome FROM cliente order by nome";
+        List<Cliente> lista = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while(rs.next()){
+                    Cliente a = new Cliente();
+                    a.setNome(rs.getString(1));
+                    lista.add(a);
+                    
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e) {
+            return null;
+        }
+    }
+    
 }

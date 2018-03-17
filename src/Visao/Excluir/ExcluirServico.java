@@ -5,9 +5,9 @@
  */
 package Visao.Excluir;
 
-import DAO.ClienteDAO;
 import DAO.Conexao;
-import Modelo.Cliente;
+import DAO.ServicoDAO;
+import Modelo.Servico;
 import java.sql.Connection;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,24 +17,24 @@ import javax.swing.JOptionPane;
  *
  * @author Euxz
  */
-public class ExcluirCliente extends javax.swing.JFrame {
+public class ExcluirServico extends javax.swing.JFrame {
 
     /**
      * Creates new form ExcluirAdministrador
      */
-    public ExcluirCliente() {
+    public ExcluirServico() {
         initComponents();
         AtualizaCombo();
     }
 
     private void AtualizaCombo(){
             Connection con = Conexao.AbrirConexao();
-            ClienteDAO sql = new ClienteDAO(con);
-            List<Cliente> lista = new ArrayList<>();
-            lista = sql.ListarComboCliente();
+            ServicoDAO sql = new ServicoDAO(con);
+            List<Servico> lista = new ArrayList<>();
+            lista = sql.ListarComboServico();
             jCB_nome.addItem("");
             
-            for(Cliente b : lista){
+            for(Servico b : lista){
                 jCB_nome.addItem(b.getNome());
             }
             Conexao.FecharConexao(con);
@@ -61,9 +61,9 @@ public class ExcluirCliente extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        jLabel2.setText("Excluir Cliente");
+        jLabel2.setText("Excluir Serviço");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(200, 0, 190, 50);
+        jLabel2.setBounds(190, 0, 190, 50);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         jButton1.setText("Excluir");
@@ -73,13 +73,14 @@ public class ExcluirCliente extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(80, 150, 100, 29);
+        jButton1.setBounds(80, 140, 100, 30);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
         jButton2.setText("Cancelar");
         getContentPane().add(jButton2);
-        jButton2.setBounds(350, 150, 110, 29);
+        jButton2.setBounds(350, 140, 110, 30);
 
+        jCB_nome.setFocusCycleRoot(true);
         jCB_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCB_nomeActionPerformed(evt);
@@ -89,6 +90,7 @@ public class ExcluirCliente extends javax.swing.JFrame {
         jCB_nome.setBounds(180, 90, 280, 25);
 
         jTF_cod.setEditable(false);
+        jTF_cod.setFocusCycleRoot(true);
         jTF_cod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTF_codActionPerformed(evt);
@@ -100,9 +102,9 @@ public class ExcluirCliente extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jLabel3.setText("Codigo:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 90, 70, 30);
+        jLabel3.setBounds(20, 80, 70, 30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/exc2.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/exc4.jpg"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 480, 240);
 
@@ -111,13 +113,13 @@ public class ExcluirCliente extends javax.swing.JFrame {
 
     private void jCB_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_nomeActionPerformed
         Connection con = Conexao.AbrirConexao();
-        ClienteDAO sql = new ClienteDAO(con);
-        List<Cliente> lista = new ArrayList<>();
+        ServicoDAO sql = new ServicoDAO(con);
+        List<Servico> lista = new ArrayList<>();
         String nome = jCB_nome.getSelectedItem().toString();
         
-        lista = sql.ConsultarCodigoCliente(nome);
+        lista = sql.ConsultarCodigoServico(nome);
         
-        for(Cliente b : lista){
+        for(Servico b : lista){
             int a = b.getCod();
             jTF_cod.setText("" + a);
         }
@@ -133,8 +135,8 @@ public class ExcluirCliente extends javax.swing.JFrame {
         String nome = jCB_nome.getSelectedItem().toString();
         
         Connection con = Conexao.AbrirConexao();
-        ClienteDAO sql = new ClienteDAO(con);
-        Cliente a = new Cliente();
+        ServicoDAO sql = new ServicoDAO(con);
+        Servico a = new Servico();
         
         if(nome.equals("")){
             JOptionPane.showMessageDialog(null,"Nenhum nome selecionado", "Locadora",
@@ -148,7 +150,7 @@ public class ExcluirCliente extends javax.swing.JFrame {
                 int cod = Integer.parseInt(codigo);
                 a.setNome(nome);
                 a.setCod(cod);
-                sql.Excluir_Cliente(a);
+                sql.Excluir_Servico(a);
                 Conexao.FecharConexao(con);
                 dispose();
             }
@@ -172,21 +174,23 @@ public class ExcluirCliente extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ExcluirCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExcluirServico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ExcluirCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExcluirServico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ExcluirCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExcluirServico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ExcluirCliente.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ExcluirServico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ExcluirCliente().setVisible(true);
+                new ExcluirServico().setVisible(true);
             }
         });
     }

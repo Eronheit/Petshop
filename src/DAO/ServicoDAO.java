@@ -122,4 +122,81 @@ public class ServicoDAO extends ExecuteSQL{
         return Resultado;
     }
     
+    //Consultar codigo do Servico
+    public List<Servico> ConsultarCodigoServico(String nome){
+        String sql = "SELECT idservico FROM servicos WHERE nome = '"+nome+"'";
+        List<Servico> lista = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while(rs.next()){
+                    Servico a = new Servico();
+                    a.setCod(rs.getInt(1));
+                    lista.add(a);
+                    
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e) {
+            return null;
+        }
+        
+    }
+    
+    //Excluir Servico
+    public String Excluir_Servico(Servico a){
+        String sql = "DELETE FROM servicos WHERE idservico = ? and nome = ?";
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ps.setInt(1, a.getCod());
+            ps.setString(2, a.getNome());
+            
+            if (ps.executeUpdate() > 0) {
+                return "Excluido com sucesso";
+            }
+            else{
+                return "Erro ao excluir";
+            }
+        } 
+        catch (SQLException e) {
+            return e.getMessage();
+        }
+    }
+    
+    //Listar combo do Servico
+    public List<Servico> ListarComboServico(){
+        String sql = "SELECT nome FROM servicos order by nome";
+        List<Servico> lista = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while(rs.next()){
+                    Servico a = new Servico();
+                    a.setNome(rs.getString(1));
+                    lista.add(a);
+                    
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e) {
+            return null;
+        }
+    }
+    
+    
 }

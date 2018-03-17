@@ -165,7 +165,7 @@ public class FuncionarioDAO extends ExecuteSQL{
         }
     }
     
-    //Consultar codigo do Cliente
+    //Consultar codigo do Funcionario
     public List<Funcionario> ConsultarCodigoFuncionario(String nome){
         String sql = "SELECT idfuncionario FROM funcionario WHERE nome = '"+nome+"'";
         List<Funcionario> lista = new ArrayList<>();
@@ -213,4 +213,32 @@ public class FuncionarioDAO extends ExecuteSQL{
             return e.getMessage();
         }
     }
+    
+    //Listar combo dos Funcionario
+    public List<Funcionario> ListarComboFuncionario(){
+        String sql = "SELECT nome FROM funcionario order by nome";
+        List<Funcionario> lista = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while(rs.next()){
+                    Funcionario a = new Funcionario();
+                    a.setNome(rs.getString(1));
+                    lista.add(a);
+                    
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e) {
+            return null;
+        }
+    }
+    
 }

@@ -110,4 +110,80 @@ public class AdministradorDAO extends ExecuteSQL{
         }
     }
     
+    //Consultar codigo do Administrador
+    public List<Administrador> ConsultarCodigoAdministrador(String nome){
+        String sql = "SELECT idadministrador FROM administrador WHERE nome = '"+nome+"'";
+        List<Administrador> lista = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while(rs.next()){
+                    Administrador a = new Administrador();
+                    a.setCod(rs.getInt(1));
+                    lista.add(a);
+                    
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e) {
+            return null;
+        }
+        
+    }
+    
+    //Excluir Administrador
+    public String Excluir_Administrador(Administrador a){
+        String sql = "DELETE FROM administrador WHERE idadministrador = ? and nome = ?";
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ps.setInt(1, a.getCod());
+            ps.setString(2, a.getNome());
+            
+            if (ps.executeUpdate() > 0) {
+                return "Excluido com sucesso";
+            }
+            else{
+                return "Erro ao excluir";
+            }
+        } 
+        catch (SQLException e) {
+            return e.getMessage();
+        }
+    }
+    
+    //Listar combo do ADM
+    public List<Administrador> ListarComboAdministrador(){
+        String sql = "SELECT nome FROM administrador order by nome";
+        List<Administrador> lista = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while(rs.next()){
+                    Administrador a = new Administrador();
+                    a.setNome(rs.getString(1));
+                    lista.add(a);
+                    
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e) {
+            return null;
+        }
+    }
+    
 }

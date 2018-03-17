@@ -1,11 +1,14 @@
 
 package DAO;
 
-import java.sql.*;
+
 import Modelo.Animal;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.*;
 import java.util.ArrayList;
-import javax.swing.JTextField;
 
 public class AnimalDAO extends ExecuteSQL{
     public AnimalDAO(Connection con){
@@ -36,63 +39,7 @@ public class AnimalDAO extends ExecuteSQL{
         }
     }
     
-    //Consultar Código do Animal
-    public List<Animal> ConsultarCodigoAnimal(String nome){
-        String sql = "SELECT idanimal FROM animal WHERE nome = '"+nome+"'";
-        List<Animal> lista = new ArrayList<>();
-        
-        try {
-            PreparedStatement ps = getCon().prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            
-            if (rs != null) {
-                while(rs.next()){
-                    Animal a = new Animal();
-                    a.setCod(rs.getInt(1));
-                    lista.add(a);
-                    
-                }
-                return lista;
-            }
-            else{
-                return null;
-            }
-        }
-        catch (Exception e) {
-            return null;
-        }
-        
-    }
 
-    //Listar o Nome do Animal, Tipo, Raça no ComboBox
-    public List<Animal> ListarComboAnimal(){
-        String sql = "SELECT nome,tipo,raca FROM animal order by nome";
-        List<Animal> lista = new ArrayList<>();
-        
-        try {
-            PreparedStatement ps = getCon().prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
-            
-            if (rs != null) {
-                while(rs.next()){
-                    Animal a = new Animal();
-                    a.setNome(rs.getString(1));
-                    a.setTipo(rs.getString(2));
-                    a.setRaca(rs.getString(3));
-                    lista.add(a);
-                    
-                }
-                return lista;
-            }
-            else{
-                return null;
-            }
-        }
-        catch (Exception e) {
-            return null;
-        }
-    }
-    
     //Método para capturar Animal para inserir Animal para Alterar
     public List<Animal> CapturarAnimal(int cod){
         String sql = "SELECT * FROM animal WHERE idanimal ="+ cod +" ";
@@ -146,7 +93,7 @@ public class AnimalDAO extends ExecuteSQL{
         return Resultado;
     }
     
-    //Método para Alterar Cliente
+    //Método para Alterar Animal
     public String Alterar_Animal(Animal a){
         String sql = " UPDATE animal set nome = ?, tipo = ?,"
                 + " raca = ?, tamanho = ?, peso = ?, idade = ? WHERE idanimal = ?";
@@ -172,5 +119,82 @@ public class AnimalDAO extends ExecuteSQL{
             return e.getMessage();
         }
     }
+    
+    //Consultar codigo do Animal
+    public List<Animal> ConsultarCodigoAnimal(String nome){
+        String sql = "SELECT idanimal FROM animal WHERE nome = '"+nome+"'";
+        List<Animal> lista = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while(rs.next()){
+                    Animal a = new Animal();
+                    a.setCod(rs.getInt(1));
+                    lista.add(a);
+                    
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e) {
+            return null;
+        }
+        
+    }
+    
+    //Excluir Animal
+    public String Excluir_Animal(Animal a){
+        String sql = "DELETE FROM animal WHERE idanimal = ? and nome = ?";
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ps.setInt(1, a.getCod());
+            ps.setString(2, a.getNome());
+            
+            if (ps.executeUpdate() > 0) {
+                return "Excluido com sucesso";
+            }
+            else{
+                return "Erro ao excluir";
+            }
+        } 
+        catch (SQLException e) {
+            return e.getMessage();
+        }
+    }
+    
+    //Listar combo do Animal
+    public List<Animal> ListarComboAnimal(){
+        String sql = "SELECT nome FROM animal order by nome";
+        List<Animal> lista = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while(rs.next()){
+                    Animal a = new Animal();
+                    a.setNome(rs.getString(1));
+                    lista.add(a);
+                    
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e) {
+            return null;
+        }
+    }
+    
     
 }
