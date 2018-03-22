@@ -50,45 +50,32 @@ public class ExcluirAnimal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jCB_nome = new javax.swing.JComboBox<>();
         jTF_cod = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 19)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Excluir Animal");
-        getContentPane().add(jLabel2);
-        jLabel2.setBounds(200, 0, 190, 50);
-
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Excluir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1);
-        jButton1.setBounds(80, 140, 100, 30);
 
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 17)); // NOI18N
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Cancelar");
-        getContentPane().add(jButton2);
-        jButton2.setBounds(320, 140, 110, 29);
 
         jCB_nome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCB_nomeActionPerformed(evt);
             }
         });
-        getContentPane().add(jCB_nome);
-        jCB_nome.setBounds(180, 90, 280, 25);
 
         jTF_cod.setEditable(false);
         jTF_cod.addActionListener(new java.awt.event.ActionListener() {
@@ -96,30 +83,74 @@ public class ExcluirAnimal extends javax.swing.JFrame {
                 jTF_codActionPerformed(evt);
             }
         });
-        getContentPane().add(jTF_cod);
-        jTF_cod.setBounds(100, 90, 50, 25);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Codigo:");
-        getContentPane().add(jLabel3);
-        jLabel3.setBounds(20, 90, 70, 30);
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        jLabel4.setText("Codigo:");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/exc1.jpg"))); // NOI18N
-        getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 480, 230);
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jLabel2.setText("Excluir Animal");
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/7541bd14c8337132e493fcb0b21eec64exc.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel5)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel4)
+                .addGap(5, 5, 5)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTF_cod, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
+                        .addComponent(jCB_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(149, 149, 149))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCB_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTF_cod, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addGap(30, 30, 30)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTF_codActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_codActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTF_codActionPerformed
 
     private void jCB_nomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_nomeActionPerformed
         Connection con = Conexao.AbrirConexao();
         AnimalDAO sql = new AnimalDAO(con);
         List<Animal> lista = new ArrayList<>();
         String nome = jCB_nome.getSelectedItem().toString();
-        
+
         lista = sql.ConsultarCodigoAnimal(nome);
-        
+
         for(Animal b : lista){
             int a = b.getCod();
             jTF_cod.setText("" + a);
@@ -127,26 +158,22 @@ public class ExcluirAnimal extends javax.swing.JFrame {
         Conexao.FecharConexao(con);
     }//GEN-LAST:event_jCB_nomeActionPerformed
 
-    private void jTF_codActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTF_codActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTF_codActionPerformed
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         String codigo = jTF_cod.getText();
         String nome = jCB_nome.getSelectedItem().toString();
-        
+
         Connection con = Conexao.AbrirConexao();
         AnimalDAO sql = new AnimalDAO(con);
         Animal a = new Animal();
-        
+
         if(nome.equals("")){
             JOptionPane.showMessageDialog(null,"Nenhum nome selecionado", "Locadora",
-                    JOptionPane.WARNING_MESSAGE);
+                JOptionPane.WARNING_MESSAGE);
         }
         else{
             int b = JOptionPane.showConfirmDialog(null,"Deseja realmente excluir ?"+" \n("+codigo+")"
-                    + "("+nome+")","Locadora",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            
+                + "("+nome+")","Locadora",JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
             if(b == 0){
                 int cod = Integer.parseInt(codigo);
                 a.setNome(nome);
@@ -198,9 +225,9 @@ public class ExcluirAnimal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jCB_nome;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JTextField jTF_cod;
     // End of variables declaration//GEN-END:variables
 }
