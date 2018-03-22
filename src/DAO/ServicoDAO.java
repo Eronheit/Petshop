@@ -21,6 +21,8 @@ public class ServicoDAO extends ExecuteSQL{
     public ServicoDAO(Connection con) {
         super(con);
     }
+    
+    //Método para inserir Servico
     public String Inserir_Servico(Servico s){
         String sql = "INSERT INTO servicos VALUES(0,?,?,?,?,?)";
         try {
@@ -150,6 +152,36 @@ public class ServicoDAO extends ExecuteSQL{
         
     }
     
+    //Consultar codigo do Servico
+    public List<Servico> ConsultarDescontoECodServico(String nome){
+        String sql = "SELECT idservico,preco,desconto FROM servicos WHERE nome = '"+nome+"'";
+        List<Servico> lista = new ArrayList<>();
+        
+        try {
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if (rs != null) {
+                while(rs.next()){
+                    Servico a = new Servico();
+                    a.setCod(rs.getInt(1));
+                    a.setPreco(rs.getDouble(2));
+                    a.setDesconto(rs.getDouble(3));
+                    lista.add(a);
+                    
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        }
+        catch (Exception e) {
+            return null;
+        }
+        
+    }
+    
     //Excluir Servico
     public String Excluir_Servico(Servico a){
         String sql = "DELETE FROM servicos WHERE idservico = ? and nome = ?";
@@ -198,5 +230,124 @@ public class ServicoDAO extends ExecuteSQL{
         }
     }
     
+    //Pesquisar Servico por Nome
+    public List<Servico> Pesquisar_Nome_Servico(String nome){
+        String sql = "SELECT idservico,nome,indicacao,preco,disponibilidade,desconto FROM servicos where nome LIKE'"+nome+"'";
+        List<Servico> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Servico a = new Servico();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setIndicacao(rs.getInt(3));
+                    a.setPreco(rs.getDouble(4));
+                    a.setDisponibilidade(rs.getString(5));
+                    a.setDesconto(rs.getDouble(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
+    
+    //Pesquisar Servico por Codigo
+    public List<Servico> Pesquisar_Codigo_Servico(int cod){
+        String sql = "SELECT idservico,nome,indicacao,preco,disponibilidade,desconto FROM servicos where idservico LIKE'"+cod+"'";
+        List<Servico> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Servico a = new Servico();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setIndicacao(rs.getInt(3));
+                    a.setPreco(rs.getDouble(4));
+                    a.setDisponibilidade(rs.getString(5));
+                    a.setDesconto(rs.getDouble(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
+    
+    //Pesquisar Todos Servicos
+    public List<Servico> ListarServico(){
+        String sql = "SELECT idservico,nome,indicacao,preco,disponibilidade,desconto FROM servicos";
+        List<Servico> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Servico a = new Servico();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setIndicacao(rs.getInt(3));
+                    a.setPreco(rs.getDouble(4));
+                    a.setDisponibilidade(rs.getString(5));
+                    a.setDesconto(rs.getDouble(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
+    
+    //Promoção
+    public String Promocao(Servico s){
+        String sql = " UPDATE servicos set desconto = ? WHERE idservico = ?";
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            
+            ps.setDouble(1, s.getDesconto());
+            ps.setInt(2, s.getCod());
+            
+            if (ps.executeUpdate() > 0) {
+                return "Promoção feita com sucesso";
+            }
+            else{
+                return "Erro ao Promocionar";
+            }
+        }
+        catch(SQLException e){
+            return e.getMessage();
+        }
+    }
     
 }

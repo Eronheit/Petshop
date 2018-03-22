@@ -186,4 +186,103 @@ public class AdministradorDAO extends ExecuteSQL{
         }
     }
     
+    //Pesquisar ADM por Nome
+    public List<Administrador> Pesquisar_Nome_Administrador(String nome){
+        String sql = "SELECT idadministrador,nome,usuario,senha,senhaextra,level FROM administrador where nome LIKE'"+nome+"'";
+        List<Administrador> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Administrador a = new Administrador();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setUsuario(rs.getString(3));
+                    a.setSenha(rs.getString(4));
+                    a.setSenhaextra(rs.getString(5));
+                    a.setLevel(rs.getString(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
+    
+    //Pesquisar ADM por Codigo
+    public List<Administrador> Pesquisar_Codigo_Administrador(int cod){
+        String sql = "SELECT idadministrador,nome,usuario,senha,senhaextra,level FROM administrador where idadministrador LIKE'"+cod+"'";
+        List<Administrador> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Administrador a = new Administrador();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setUsuario(rs.getString(3));
+                    a.setSenha(rs.getString(4));
+                    a.setSenhaextra(rs.getString(5));
+                    a.setLevel(rs.getString(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
+    
+    //Pesquisar Todos ADM
+    public List<Administrador> ListarAdministrador(){
+        String sql = "SELECT idadministrador,nome,usuario,senha,senhaextra,level FROM administrador";
+        List<Administrador> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Administrador a = new Administrador();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setUsuario(rs.getString(3));
+                    a.setSenha(rs.getString(4));
+                    a.setSenhaextra(rs.getString(5));
+                    a.setLevel(rs.getString(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
+    
 }

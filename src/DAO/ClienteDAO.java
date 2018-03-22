@@ -202,4 +202,106 @@ public class ClienteDAO extends ExecuteSQL{
         }
     }
     
+    //Pesquisar Cliente por Nome
+    public List<Cliente> Pesquisar_Nome_Cliente(String nome){
+        String sql = "SELECT idcliente,nome,email,cpf,telefone,endereco,level FROM cliente where nome LIKE'"+nome+"'";
+        List<Cliente> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Cliente a = new Cliente();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setEmail(rs.getString(3));
+                    a.setCpf(rs.getString(4));
+                    a.setTelefone(rs.getString(5));
+                    a.setEndereco(rs.getString(6));
+                    a.setLevel(rs.getString(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
+
+    //Pesquisar Animal por Codigo
+    public List<Cliente> Pesquisar_Codigo_Cliente(int cod){
+        String sql = "SELECT idcliente,nome,email,cpf,telefone,endereco,level FROM cliente where idcliente LIKE'"+cod+"'";
+        List<Cliente> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Cliente a = new Cliente();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setEmail(rs.getString(3));
+                    a.setCpf(rs.getString(4));
+                    a.setTelefone(rs.getString(5));
+                    a.setEndereco(rs.getString(6));
+                    a.setLevel(rs.getString(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }   
+    
+    //Pesquisar Todos Clientes
+    public List<Cliente> ListarCliente(){
+        String sql = "SELECT idcliente,nome,email,cpf,telefone,endereco,level FROM cliente";
+        List<Cliente> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Cliente a = new Cliente();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setEmail(rs.getString(3));
+                    a.setCpf(rs.getString(4));
+                    a.setTelefone(rs.getString(5));
+                    a.setEndereco(rs.getString(6));
+                    a.setLevel(rs.getString(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
+    
 }

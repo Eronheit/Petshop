@@ -196,5 +196,105 @@ public class AnimalDAO extends ExecuteSQL{
         }
     }
     
+    //Pesquisar Animal por Nome
+    public List<Animal> Pesquisar_Nome_Animal(String nome){
+        String sql = "SELECT idanimal,nome,tipo,raca,tamanho,peso,idade FROM animal where nome LIKE'"+nome+"'";
+        List<Animal> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Animal a = new Animal();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setTipo(rs.getString(3));
+                    a.setRaca(rs.getString(4));
+                    a.setTamanho(rs.getDouble(5));
+                    a.setPeso(rs.getDouble(6));
+                    a.setIdade(rs.getInt(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
     
+    //Pesquisar Animal por Codigo
+    public List<Animal> Pesquisar_Codigo_Animal(int cod){
+        String sql = "SELECT idanimal,nome,tipo,raca,tamanho,peso,idade FROM animal where idanimal LIKE'"+cod+"'";
+        List<Animal> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Animal a = new Animal();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setTipo(rs.getString(3));
+                    a.setRaca(rs.getString(4));
+                    a.setTamanho(rs.getDouble(5));
+                    a.setPeso(rs.getDouble(6));
+                    a.setIdade(rs.getInt(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }   
+    
+    //Pesquisar Todos Animal
+    public List<Animal> ListarAnimal(){
+        String sql = "SELECT idanimal,nome,tipo,raca,tamanho,peso,idade FROM animal";
+        List<Animal> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Animal a = new Animal();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setTipo(rs.getString(3));
+                    a.setRaca(rs.getString(4));
+                    a.setTamanho(rs.getDouble(5));
+                    a.setPeso(rs.getDouble(6));
+                    a.setIdade(rs.getInt(6));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
 }

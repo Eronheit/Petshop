@@ -241,4 +241,111 @@ public class FuncionarioDAO extends ExecuteSQL{
         }
     }
     
+    //Pesquisar Funcionario por Nome
+    public List<Funcionario> Pesquisar_Nome_Funcionario(String nome){
+        String sql = "SELECT idfuncionario,nome,usuario,senha,endereco,cpf,rg,telefone,level FROM funcionario where nome LIKE'"+nome+"'";
+        List<Funcionario> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Funcionario a = new Funcionario();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setUsuario(rs.getString(3));
+                    a.setSenha(rs.getString(4));
+                    a.setEndereco(rs.getString(5));
+                    a.setCpf(rs.getString(6));
+                    a.setRg(rs.getString(7));
+                    a.setTelefone(rs.getString(8));
+                    a.setLevel(rs.getInt(9));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
+    
+    //Pesquisar Funcionario por Codigo
+    public List<Funcionario> Pesquisar_Codigo_Funcionario(int cod){
+        String sql = "SELECT idfuncionario,nome,usuario,senha,endereco,cpf,rg,telefone,level FROM funcionario where idfuncionario LIKE'"+cod+"'";
+        List<Funcionario> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Funcionario a = new Funcionario();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setUsuario(rs.getString(3));
+                    a.setSenha(rs.getString(4));
+                    a.setEndereco(rs.getString(5));
+                    a.setCpf(rs.getString(6));
+                    a.setRg(rs.getString(7));
+                    a.setTelefone(rs.getString(8));
+                    a.setLevel(rs.getInt(9));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
+
+    //Pesquisar Todos Funcionarios
+    public List<Funcionario> ListarFuncionario(){
+        String sql = "SELECT idfuncionario,nome,usuario,senha,endereco,cpf,rg,telefone,level FROM funcionario";
+        List<Funcionario> lista = new ArrayList<>();
+        
+        try{
+            PreparedStatement ps = getCon().prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+            
+            if(rs != null){
+                while(rs.next()){
+                    Funcionario a = new Funcionario();
+                    a.setCod(rs.getInt(1));
+                    a.setNome(rs.getString(2));
+                    a.setUsuario(rs.getString(3));
+                    a.setSenha(rs.getString(4));
+                    a.setEndereco(rs.getString(5));
+                    a.setCpf(rs.getString(6));
+                    a.setRg(rs.getString(7));
+                    a.setTelefone(rs.getString(8));
+                    a.setLevel(rs.getInt(9));
+                    
+                    lista.add(a);
+                }
+                return lista;
+            }
+            else{
+                return null;
+            }
+        
+        }
+        catch(SQLException e){
+            return null;
+        }
+    }
 }
