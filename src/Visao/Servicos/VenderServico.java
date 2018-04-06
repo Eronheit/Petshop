@@ -30,6 +30,9 @@ public class VenderServico extends javax.swing.JFrame {
         initComponents();
         AtualizaComboAnimal();
         AtualizaComboServico();
+        setSize(905,600);
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     private void AtualizaComboAnimal(){
@@ -87,7 +90,7 @@ public class VenderServico extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jTF_total = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/7541bd14c8337132e493fcb0b21eec64.jpg"))); // NOI18N
 
@@ -272,7 +275,14 @@ public class VenderServico extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
+        jTF_cpf.setText("");
+        jTF_codservico.setText("");
+        jTF_codanimal.setText("");
+        jTF_desconto.setText("");
+        jTF_total.setText("");
+        jTF_pagamento.setText("");
+        jCB_animal.setSelectedIndex(0);
+        jCB_servico.setSelectedIndex(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -322,6 +332,9 @@ public class VenderServico extends javax.swing.JFrame {
             jTF_desconto.setText("");
             jTF_total.setText("");
             jTF_pagamento.setText("");
+            jCB_animal.setSelectedIndex(0);
+            jCB_servico.setSelectedIndex(0);
+            
             
             JOptionPane.showMessageDialog(null,"Venda feita com sucesso", "sucesso", JOptionPane.INFORMATION_MESSAGE);
         }

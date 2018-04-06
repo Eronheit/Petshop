@@ -28,8 +28,10 @@ public class AlterarServico extends javax.swing.JFrame {
      */
     public AlterarServico() {
         initComponents();
-        setSize(975, 575);
+        setSize(905, 575);
         AtualizaComboAnimal();
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
     
     private void AtualizaComboAnimal(){
@@ -94,7 +96,7 @@ public class AlterarServico extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         zero = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Limpar");
@@ -163,7 +165,7 @@ public class AlterarServico extends javax.swing.JFrame {
         jLabel12.setText("Insira o código:");
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel13.setText("Cliente Nº:");
+        jLabel13.setText("Serviço Nº:");
 
         codigo.setEditable(false);
         codigo.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -344,6 +346,7 @@ public class AlterarServico extends javax.swing.JFrame {
             jTF_indicacao.setText("");
             jTF_preco.setText("");
             jTF_disponibilidade.setText("");
+            jCB_indicacao.setSelectedIndex(0);
             
             JOptionPane.showMessageDialog(null,"Serviço inserido com sucesso", "sucesso", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -358,6 +361,9 @@ public class AlterarServico extends javax.swing.JFrame {
         jTF_indicacao.setText("");
         jTF_preco.setText("");
         jTF_disponibilidade.setText("");
+        jTF_cod.setText("");
+        codigo.setText("");
+        jCB_indicacao.setSelectedIndex(0);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jCB_indicacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_indicacaoActionPerformed

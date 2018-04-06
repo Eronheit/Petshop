@@ -25,6 +25,9 @@ public class ExcluirServico extends javax.swing.JFrame {
     public ExcluirServico() {
         initComponents();
         AtualizaCombo();
+        setSize(455,300);
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     private void AtualizaCombo(){
@@ -57,7 +60,7 @@ public class ExcluirServico extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Excluir");
@@ -69,6 +72,11 @@ public class ExcluirServico extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Cancelar");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jCB_nome.setFocusCycleRoot(true);
         jCB_nome.addActionListener(new java.awt.event.ActionListener() {
@@ -182,6 +190,10 @@ public class ExcluirServico extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

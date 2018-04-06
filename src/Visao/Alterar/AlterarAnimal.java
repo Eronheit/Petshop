@@ -82,7 +82,7 @@ public class AlterarAnimal extends javax.swing.JFrame {
         jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Peso:");
@@ -362,6 +362,7 @@ public class AlterarAnimal extends javax.swing.JFrame {
             jTF_idade.setText("");
             jTF_idade.setText("");
             codigo.setText("");
+            jTF_cod.setText("");
             
             JOptionPane.showMessageDialog(null,"Animal alterado com sucesso", "sucesso", JOptionPane.INFORMATION_MESSAGE);
         }
@@ -379,6 +380,7 @@ public class AlterarAnimal extends javax.swing.JFrame {
         jTF_peso.setText("");
         jTF_idade.setText("");
         codigo.setText("");
+        jTF_cod.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed

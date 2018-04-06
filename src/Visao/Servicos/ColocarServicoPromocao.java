@@ -25,6 +25,9 @@ public class ColocarServicoPromocao extends javax.swing.JFrame {
     public ColocarServicoPromocao() {
         initComponents();
         AtualizaComboServico();
+        setSize(905, 520);
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     private void AtualizaComboServico(){
@@ -60,7 +63,7 @@ public class ColocarServicoPromocao extends javax.swing.JFrame {
         jTF_preco = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/7541bd14c8337132e493fcb0b21eec64.jpg"))); // NOI18N
 

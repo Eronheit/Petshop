@@ -236,7 +236,7 @@ public class ClienteDAO extends ExecuteSQL{
         }
     }
 
-    //Pesquisar Animal por Codigo
+    //Pesquisar Cliente por Codigo
     public List<Cliente> Pesquisar_Codigo_Cliente(int cod){
         String sql = "SELECT idcliente,nome,email,cpf,telefone,endereco,level FROM cliente where idcliente LIKE'"+cod+"'";
         List<Cliente> lista = new ArrayList<>();
@@ -288,7 +288,7 @@ public class ClienteDAO extends ExecuteSQL{
                     a.setCpf(rs.getString(4));
                     a.setTelefone(rs.getString(5));
                     a.setEndereco(rs.getString(6));
-                    a.setLevel(rs.getString(6));
+                    a.setLevel(rs.getString(7));
                     
                     lista.add(a);
                 }

@@ -22,7 +22,9 @@ public class CadastrarAdministrador extends javax.swing.JFrame {
      */
     public CadastrarAdministrador() {
         initComponents();
-        setSize(975, 575);
+        setSize(905, 540);
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     /**
@@ -48,7 +50,7 @@ public class CadastrarAdministrador extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Nome:");
@@ -89,9 +91,11 @@ public class CadastrarAdministrador extends javax.swing.JFrame {
         });
 
         jTF_senhaextra.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTF_senhaextra.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_senhaextra.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jTF_senha.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jTF_senha.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jTF_senha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -111,45 +115,44 @@ public class CadastrarAdministrador extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(283, 283, 283)
-                        .addComponent(jLabel3)
-                        .addGap(5, 5, 5)
-                        .addComponent(jTF_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(237, 237, 237)
-                        .addComponent(jLabel4)
-                        .addGap(5, 5, 5)
-                        .addComponent(jTF_senhaextra, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(285, 285, 285)
-                        .addComponent(jLabel2)
-                        .addGap(5, 5, 5)
-                        .addComponent(jTF_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(181, 181, 181)
-                        .addComponent(jLabel5)
-                        .addGap(5, 5, 5)
-                        .addComponent(jTF_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel7)
+                .addGap(182, 182, 182))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(234, 234, 234))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addGap(191, 191, 191))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(211, 211, 211))))
+                    .addComponent(jLabel10)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(46, 46, 46)
+                                .addComponent(jLabel3)
+                                .addGap(5, 5, 5)
+                                .addComponent(jTF_senha, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4)
+                                .addGap(5, 5, 5)
+                                .addComponent(jTF_senhaextra, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(48, 48, 48)
+                                .addComponent(jLabel2)
+                                .addGap(5, 5, 5)
+                                .addComponent(jTF_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(jLabel5)
+                                .addGap(5, 5, 5)
+                                .addComponent(jTF_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,7 +160,7 @@ public class CadastrarAdministrador extends javax.swing.JFrame {
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(jLabel7)
-                .addGap(20, 20, 20)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTF_nome, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -173,56 +176,59 @@ public class CadastrarAdministrador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTF_senhaextra, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(13, 13, 13))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        String nome = jTF_nome.getText();
-        String senha = jTF_senha.getText();
-        String senhaextra = jTF_senhaextra.getText();
-        
-        if (nome.equalsIgnoreCase("") || senha.equalsIgnoreCase("") || senhaextra.equalsIgnoreCase("")) {
-            
-            JOptionPane.showMessageDialog(null,"Nenhum campo pode ficar vazio!!","Erro", JOptionPane.WARNING_MESSAGE);
-            
-
-        }
-        else{
-            Connection con = Conexao.AbrirConexao(); 
-            AdministradorDAO sql = new AdministradorDAO(con);
-            Administrador a = new Administrador();
-            
-            a.setNome(nome);
-            a.setSenha(senha);
-            a.setSenhaextra(senhaextra);
-            
-            sql.Inserir_Administrador(a);
-            
-            Conexao.FecharConexao(con);
-            
-            jTF_nome.setText("");
-            jTF_senha.setText("");
-            jTF_senhaextra.setText("");
-            
-            JOptionPane.showMessageDialog(null,"Administrador inserido com sucesso", "sucesso", JOptionPane.INFORMATION_MESSAGE);
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String nome = jTF_nome.getText();
+        String senha = jTF_senha.getText();
+        String usuario = jTF_usuario.getText();
+        String senhaextra = jTF_senhaextra.getText();
+
+        if (nome.equalsIgnoreCase("") || usuario.equalsIgnoreCase("") || senha.equalsIgnoreCase("") || senhaextra.equalsIgnoreCase("")) {
+
+            JOptionPane.showMessageDialog(null,"Nenhum campo pode ficar vazio!!","Erro", JOptionPane.WARNING_MESSAGE);
+
+        }
+        else{
+            Connection con = Conexao.AbrirConexao();
+            AdministradorDAO sql = new AdministradorDAO(con);
+            Administrador a = new Administrador();
+
+            a.setNome(nome);
+            a.setUsuario(usuario);
+            a.setSenha(senha);
+            a.setSenhaextra(senhaextra);
+
+            sql.Inserir_Administrador(a);
+
+            Conexao.FecharConexao(con);
+
+            jTF_nome.setText("");
+            jTF_usuario.setText("");
+            jTF_senha.setText("");
+            jTF_senhaextra.setText("");
+
+            JOptionPane.showMessageDialog(null,"Administrador inserido com sucesso", "sucesso", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTF_nome.setText("");
         jTF_senha.setText("");
+        jTF_usuario.setText("");
         jTF_senhaextra.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 

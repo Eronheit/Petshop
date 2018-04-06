@@ -248,7 +248,7 @@ public class AnimalDAO extends ExecuteSQL{
                     a.setRaca(rs.getString(4));
                     a.setTamanho(rs.getDouble(5));
                     a.setPeso(rs.getDouble(6));
-                    a.setIdade(rs.getInt(6));
+                    a.setIdade(rs.getInt(7));
                     
                     lista.add(a);
                 }
@@ -282,7 +282,7 @@ public class AnimalDAO extends ExecuteSQL{
                     a.setRaca(rs.getString(4));
                     a.setTamanho(rs.getDouble(5));
                     a.setPeso(rs.getDouble(6));
-                    a.setIdade(rs.getInt(6));
+                    a.setIdade(rs.getInt(7));
                     
                     lista.add(a);
                 }

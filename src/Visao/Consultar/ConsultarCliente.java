@@ -26,6 +26,8 @@ public class ConsultarCliente extends javax.swing.JFrame {
     public ConsultarCliente() {
         initComponents();
         AtualizaTable();
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
     
     private void AtualizaTable(){
@@ -78,7 +80,7 @@ public class ConsultarCliente extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 

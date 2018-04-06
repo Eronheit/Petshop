@@ -14,13 +14,14 @@ public class AdministradorDAO extends ExecuteSQL{
     
     //Cadastrar ADM
     public String Inserir_Administrador(Administrador a){
-      String sql = "INSERT INTO administrador VALUES (0,?,?,?,?)";
+      String sql = "INSERT INTO administrador VALUES (0,?,?,?,?,?)";
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
             ps.setString(1, a.getNome());
-            ps.setString(2, a.getSenha());
-            ps.setString(3, a.getSenhaextra());
-            ps.setString(4, "0");
+            ps.setString(2, a.getUsuario());
+            ps.setString(3, a.getSenha());
+            ps.setString(4, a.getSenhaextra());
+            ps.setString(5, "0");
             
             if (ps.executeUpdate() > 0) {
                 return "Administrador inserido com sucesso";

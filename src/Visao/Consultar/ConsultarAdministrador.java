@@ -25,6 +25,8 @@ public class ConsultarAdministrador extends javax.swing.JFrame {
     public ConsultarAdministrador() {
         initComponents();
         AtualizaTable();
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     private void AtualizaTable(){
@@ -75,7 +77,7 @@ public class ConsultarAdministrador extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setSize(new java.awt.Dimension(0, 0));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/7541bd14c8337132e493fcb0b21eec64.jpg"))); // NOI18N
@@ -102,6 +104,8 @@ public class ConsultarAdministrador extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Pesquisar por nome:");
 
+        jTF_pnome.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
+
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/pesquisar.jpg"))); // NOI18N
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,6 +115,8 @@ public class ConsultarAdministrador extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 15)); // NOI18N
         jLabel2.setText("Pesquisar por código:");
+
+        jTF_pcod.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
 
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/pesquisar.jpg"))); // NOI18N
         jButton5.addActionListener(new java.awt.event.ActionListener() {

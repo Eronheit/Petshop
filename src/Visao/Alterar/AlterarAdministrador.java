@@ -78,7 +78,7 @@ public class AlterarAdministrador extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Nome:");
@@ -317,9 +317,11 @@ public class AlterarAdministrador extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         jTF_nome.setText("");
+        jTF_usuario.setText("");
         jTF_senha.setText("");
         jTF_senhaextra.setText("");
         codigo.setText("");
+        jTF_cod.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed

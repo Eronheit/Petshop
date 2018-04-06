@@ -85,7 +85,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Usuário:");
@@ -397,6 +397,7 @@ public class AlterarFuncionario extends javax.swing.JFrame {
         jTF_rg.setText("");
         jTF_telefone.setText("");
         codigo.setText("");
+        jTF_cod.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void codigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_codigoActionPerformed

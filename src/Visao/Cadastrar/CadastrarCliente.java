@@ -22,7 +22,9 @@ public class CadastrarCliente extends javax.swing.JFrame {
      */
     public CadastrarCliente() {
         initComponents();
-        setSize(975, 575);
+        setSize(905, 575);
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     /**
@@ -50,7 +52,7 @@ public class CadastrarCliente extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Endereço:");

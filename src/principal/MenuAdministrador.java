@@ -5,6 +5,7 @@
  */
 package principal;
 
+import DAO.Conexao;
 import Visao.Alterar.AlterarAdministrador;
 import Visao.Alterar.AlterarAnimal;
 import Visao.Alterar.AlterarCliente;
@@ -28,6 +29,7 @@ import Visao.Servicos.ColocarServicoPromocao;
 import Visao.Servicos.VenderServico;
 import Visao.Servicos.ConsultarServico;
 import Visao.Servicos.ExcluirServico;
+import java.sql.Connection;
 
 /**
  *
@@ -45,6 +47,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         setSize(905, 390);
     }
 
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -89,7 +92,7 @@ public class MenuAdministrador extends javax.swing.JFrame {
         jMenuItem24 = new javax.swing.JMenuItem();
         jMenuItem25 = new javax.swing.JMenuItem();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton1.setText("Vender Serviço");

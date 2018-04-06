@@ -25,6 +25,9 @@ public class ConsultarServico extends javax.swing.JFrame {
     public ConsultarServico() {
         initComponents();
         AtualizaTable();
+        setSize(905, 580);
+        setLocationRelativeTo(this);
+        setResizable(false);
         
     }
 
@@ -77,7 +80,7 @@ public class ConsultarServico extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagens/7541bd14c8337132e493fcb0b21eec64.jpg"))); // NOI18N
 
