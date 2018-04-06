@@ -170,7 +170,7 @@ public class ExcluirServico extends javax.swing.JFrame {
         
         Connection con = Conexao.AbrirConexao();
         ServicoDAO sql = new ServicoDAO(con);
-        Servico a = new Servico();
+        Servico s = new Servico();
         
         if(nome.equals("")){
             JOptionPane.showMessageDialog(null,"Nenhum nome selecionado", "Locadora",
@@ -182,9 +182,9 @@ public class ExcluirServico extends javax.swing.JFrame {
             
             if(b == 0){
                 int cod = Integer.parseInt(codigo);
-                a.setNome(nome);
-                a.setCod(cod);
-                sql.Excluir_Servico(a);
+                s.setNome(nome);
+                s.setCod(cod);
+                sql.Excluir_Servico(s);
                 Conexao.FecharConexao(con);
                 dispose();
             }

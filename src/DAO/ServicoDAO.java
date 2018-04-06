@@ -183,13 +183,13 @@ public class ServicoDAO extends ExecuteSQL{
     }
     
     //Excluir Servico
-    public String Excluir_Servico(Servico a){
+    public String Excluir_Servico(Servico s){
         String sql = "DELETE FROM servicos WHERE idservico = ? and nome = ?";
         
         try {
             PreparedStatement ps = getCon().prepareStatement(sql);
-            ps.setInt(1, a.getCod());
-            ps.setString(2, a.getNome());
+            ps.setInt(1, s.getCod());
+            ps.setString(2, s.getNome());
             
             if (ps.executeUpdate() > 0) {
                 return "Excluido com sucesso";
